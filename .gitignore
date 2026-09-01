@@ -1,11 +1,9 @@
-# Release ä¸ä¸´æ—¶æ–‡ä»¶
-bin/
+# Release ä¸ä¸´æ—¶æ–‡ä»?bin/
 obj/
 .vs/
 *.user
 
-# åŸå§‹ç´ æä¸å‚è€ƒå…‹éš†
-pet_assets_raw/
+# åŸå§‹ç´ æä¸å‚è€ƒå…‹éš?pet_assets_raw/
 _render_live.png
 _screen_check.png
 dafeiyu-pet/
@@ -15,3 +13,10 @@ release/
 # ç³»ç»Ÿæ–‡ä»¶
 Thumbs.db
 Desktop.ini
+
+# GitHub ÁîÅÆ(¾ø²»ÉÏ´«)
+.ghtoken
+
+# Ö÷³ÌĞòÏà¹Ø(±¾µØ±£Áô,²»Èë²Ö¿â)
+docs/
+interfaces/
