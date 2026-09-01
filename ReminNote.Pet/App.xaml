@@ -1,0 +1,13 @@
+<Application x:Class="ReminNote.Pet.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             ShutdownMode="OnExplicitShutdown">
+    <Application.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+        <!-- 桌宠骨架自包含样式；未来对接主程序时改为 Link 共享 Design System -->
+        <SolidColorBrush x:Key="PetAccentBrush" Color="#FF6C8CFF"/>
+        <SolidColorBrush x:Key="PetSurfaceBrush" Color="#F2FFFFFF"/>
+        <SolidColorBrush x:Key="PetTextBrush" Color="#FF1B1B1F"/>
+        <SolidColorBrush x:Key="PetMutedTextBrush" Color="#FF6B6B76"/>
+    </Application.Resources>
+</Application>

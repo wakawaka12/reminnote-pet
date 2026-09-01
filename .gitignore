@@ -1,0 +1,17 @@
+# Release 与临时文件
+bin/
+obj/
+.vs/
+*.user
+
+# 原始素材与参考克隆
+pet_assets_raw/
+_render_live.png
+_screen_check.png
+dafeiyu-pet/
+_ref_*/
+release/
+
+# 系统文件
+Thumbs.db
+Desktop.ini
