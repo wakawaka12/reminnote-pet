@@ -4,7 +4,7 @@
              ShutdownMode="OnExplicitShutdown">
     <Application.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
-        <!-- 桌宠骨架自包含样式；未来对接主程序时改为 Link 共享 Design System -->
+        <!-- 桌宠骨架自包含样式；未来接入宿主应用时改为 Link 共享 Design System -->
         <SolidColorBrush x:Key="PetAccentBrush" Color="#FF6C8CFF"/>
         <SolidColorBrush x:Key="PetSurfaceBrush" Color="#F2FFFFFF"/>
         <SolidColorBrush x:Key="PetTextBrush" Color="#FF1B1B1F"/>

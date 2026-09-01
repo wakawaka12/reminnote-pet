@@ -17,7 +17,7 @@ public sealed record MockReminder(
     bool IsPinned);
 
 /// <summary>
-/// 桌宠状态与提醒数据。骨架阶段用 Mock 数据；未来对接主程序时，
+/// 桌宠状态与提醒数据。骨架阶段用 Mock 数据；未来接入宿主应用时，
 /// 该数据由 <c>IReminderFeed / IReminderQueryService</c> 提供（见 docs/06_INTERFACE_STUBS.md）。
 /// </summary>
 public sealed class PetViewModel : ObservableObject

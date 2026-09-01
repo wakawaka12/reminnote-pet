@@ -1,25 +1,23 @@
-# Release ä¸ä¸´æ—¶æ–‡ä»?bin/
+# æ„å»ºäº§ç‰©
+bin/
 obj/
 .vs/
 *.user
 
-# åŸå§‹ç´ æä¸å‚è€ƒå…‹éš?pet_assets_raw/
+# åŸå§‹ç´ æ / æœ¬åœ°å·¥å…· / å‚è€ƒå…‹éš†
+pet_assets_raw/
+_ref_*/
+dafeiyu-pet/
 _render_live.png
 _screen_check.png
-dafeiyu-pet/
-_ref_*/
+/*.png
+
+# å‘å¸ƒäº§ç‰©
 release/
 
-# ç³»ç»Ÿæ–‡ä»¶
-Thumbs.db
-Desktop.ini
-
-# GitHub ÁîÅÆ(¾ø²»ÉÏ´«)
+# GitHub ä»¤ç‰Œ(ç»ä¸ä¸Šä¼ )
 .ghtoken
 
-# Ö÷³ÌĞòÏà¹Ø(±¾µØ±£Áô,²»Èë²Ö¿â)
+# ä¸»ç¨‹åºç›¸å…³(æœ¬åœ°ä¿ç•™,ä¸å…¥ä»“åº“)
 docs/
 interfaces/
-
-# ¿ª·¢ÆÚ½ØÍ¼(¸ùÄ¿Â¼)
-/*.png

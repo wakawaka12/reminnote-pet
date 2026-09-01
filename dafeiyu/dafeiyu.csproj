@@ -13,9 +13,9 @@
   </PropertyGroup>
 
   <!--
-    独立骨架：不引用主程序项目，不引入第三方 NuGet。
+    独立骨架：不引用任何宿主项目，不引入第三方 NuGet。
     本目录仅用于独立演示/验证「提醒桌宠」形态；
-    未来对接主程序时按 docs/10_HANDOFF.md 迁入 src/windows。
+    未来接入宿主应用时按 docs/10_HANDOFF.md 迁入 src/windows。
   -->
 
   <ItemGroup>

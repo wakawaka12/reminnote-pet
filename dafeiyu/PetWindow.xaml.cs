@@ -678,16 +678,6 @@ public partial class PetWindow : Window
 
     private void OnIgnoreClick(object sender, RoutedEventArgs e) => _viewModel.ClearReminder();
 
-    private void OnOpenMainClick(object sender, RoutedEventArgs e)
-    {
-        MessageBox.Show(
-            "此功能为对接预留（当前独立运行）。",
-            "大肥鱼桌宠",
-            MessageBoxButton.OK,
-            MessageBoxImage.Information);
-        _viewModel.ClearReminder();
-    }
-
     // ---------- 托盘与收纳 ----------
 
     private void OnCollapseClick(object sender, RoutedEventArgs e) => CollapseToTray();

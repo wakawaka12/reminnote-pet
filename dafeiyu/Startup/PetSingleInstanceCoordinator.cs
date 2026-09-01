@@ -6,9 +6,9 @@ using System.Text;
 namespace dafeiyu.Startup;
 
 /// <summary>
-/// 桌宠单实例 + 激活协调器。复用主程序 Widget 的「Mutex + 命名管道」思路：
+/// 桌宠单实例 + 激活协调器。复用成熟桌宠 Widget 的「Mutex + 命名管道」思路：
 /// 用命名互斥锁判断是否为主实例，用命名管道向已运行实例发送「唤起」消息。
-/// 独立骨架内自带一份精简实现，不依赖主程序代码。
+/// 独立骨架内自带一份精简实现，不依赖任何宿主代码。
 /// </summary>
 internal static class PetInstanceIdentity
 {

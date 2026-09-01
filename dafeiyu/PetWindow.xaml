@@ -69,7 +69,6 @@
                         <Button Content="完成" Click="OnCompleteClick" Margin="0,0,4,4"/>
                         <Button Content="稍后" Click="OnSnoozeClick" Margin="0,0,4,4"/>
                         <Button Content="忽略" Click="OnIgnoreClick" Margin="0,0,4,4"/>
-                        <Button Content="打开主程序" Click="OnOpenMainClick" Margin="0,0,0,4"/>
                     </WrapPanel>
                 </StackPanel>
             </Border>
