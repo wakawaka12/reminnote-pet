@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 ReminNote 桌宠作者
+Copyright (c) 2026 大肥鱼桌宠作者
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

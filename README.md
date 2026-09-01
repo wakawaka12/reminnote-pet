@@ -18,15 +18,15 @@
 环境:Windows + .NET 10 SDK
 
 ```powershell
-& 'C:\Program Files\dotnet\dotnet.exe' build '.\ReminNote.Pet\ReminNote.Pet.csproj'
-& '.\ReminNote.Pet\bin\Debug\net10.0-windows\ReminNote.Pet.exe'
+& 'C:\Program Files\dotnet\dotnet.exe' build '.\dafeiyu\dafeiyu.csproj'
+& '.\dafeiyu\bin\Debug\net10.0-windows\dafeiyu.exe'
 ```
 
-> ℹ️ 项目目录/工程名沿用了创建时的历史命名(`ReminNote.Pet`),**项目本体是完全独立的桌宠,与任何笔记/记事本应用无关**;未来可整体重命名。
+> ℹ️ 工程名 `dafeiyu` 为「大肥鱼」的拼音。
 
 ## 📦 直接运行发布包
 
-下载 Releases 中的 `ReminNote.Pet-win-x64.zip`(需已装 .NET 10 桌面运行时),解压后双击 `ReminNote.Pet.exe`。
+下载 Releases 中的 `dafeiyu-win-x64.zip`(需已装 .NET 10 桌面运行时),解压后双击 `dafeiyu.exe`。
 
 ## 🎨 素材管线(自定义形象)
 
@@ -35,7 +35,7 @@
 ```powershell
 # 1) 原始白底图放入 pet_assets_raw\(文件名含 drag / hidden_top / run 等关键字)
 # 2) 执行预处理(抠图 / 接触边对齐 / 白边去污):
-$env:PET_BASE='D:\桌宠'; & '.\ReminNote.Pet\tools\preprocess_sprites.ps1'
+$env:PET_BASE='D:\桌宠'; & '.\dafeiyu\tools\preprocess_sprites.ps1'
 ```
 
 - 多帧精灵集(行条幅):命名 `*_sheet.png` 放入 `Assets\Sprite\` 即自动逐帧播放(列数在 `PetWindow` 配置);
