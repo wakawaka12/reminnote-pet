@@ -1,8 +1,10 @@
 using System.ComponentModel;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Threading;
 using System.Windows.Media;
 using dafeiyu.Animation;
@@ -214,6 +216,8 @@ public partial class PetWindow : Window
                 ClampCurrentToWorkArea();
             }));
         };
+
+        StartFullscreenGuard();   // 全屏防打扰:检测到全屏应用时自动隐藏
     }
 
     // ---------- 动画 ----------
@@ -679,6 +683,105 @@ public partial class PetWindow : Window
     private void OnIgnoreClick(object sender, RoutedEventArgs e) => _viewModel.ClearReminder();
 
     // ---------- 托盘与收纳 ----------
+
+    /// <summary>全屏防打扰:前台有全屏应用(游戏/播放器)时自动隐藏,退出全屏自动恢复。</summary>
+    private bool _hiddenByFullScreen;
+    private DispatcherTimer? _fullscreenTimer;
+
+    private void StartFullscreenGuard()
+    {
+        _fullscreenTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1.5) };
+        _fullscreenTimer.Tick += (_, _) =>
+        {
+            try
+            {
+                if (IsForegroundFullScreen())
+                {
+                    if (!_hiddenByFullScreen)
+                    {
+                        _hiddenByFullScreen = true;
+                        if (IsVisible)
+                        {
+                            Hide();
+                        }
+                    }
+                }
+                else if (_hiddenByFullScreen)
+                {
+                    _hiddenByFullScreen = false;
+                    // 仅当用户未主动收纳时才恢复显示
+                    if (!_viewModel.IsCollapsed)
+                    {
+                        Show();
+                        WindowState = WindowState.Normal;
+                        Activate();
+                    }
+                }
+            }
+            catch
+            {
+            }
+        };
+        _fullscreenTimer.Start();
+    }
+
+    /// <summary>前台窗口是否为全屏应用(占满所在屏幕 ≥98%)。</summary>
+    private bool IsForegroundFullScreen()
+    {
+        var hwnd = Native.GetForegroundWindow();
+        if (hwnd == IntPtr.Zero || hwnd == new WindowInteropHelper(this).Handle)
+        {
+            return false;
+        }
+
+        if (!Native.IsWindowVisible(hwnd))
+        {
+            return false;
+        }
+
+        // 排除桌面/任务栏/开始菜单等系统外壳窗口
+        var cls = new System.Text.StringBuilder(256);
+        Native.GetClassName(hwnd, cls, 256);
+        if (cls.ToString() is "Progman" or "WorkerW" or "Shell_TrayWnd" or "Shell_SecondaryTrayWnd" or "XamlExplorerHostIslandWindow")
+        {
+            return false;
+        }
+
+        Native.GetWindowRect(hwnd, out var rect);
+        var width = rect.Right - rect.Left;
+        var height = rect.Bottom - rect.Top;
+        if (width <= 0 || height <= 0)
+        {
+            return false;
+        }
+
+        var bounds = Forms.Screen.FromHandle(hwnd).Bounds;
+        return width >= bounds.Width * 0.98 && height >= bounds.Height * 0.98;
+    }
+
+    private static class Native
+    {
+        [DllImport("user32.dll")]
+        public static extern IntPtr GetForegroundWindow();
+
+        [DllImport("user32.dll")]
+        public static extern bool IsWindowVisible(IntPtr hWnd);
+
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        public static extern int GetClassName(IntPtr hWnd, System.Text.StringBuilder lpClassName, int nMaxCount);
+
+        [DllImport("user32.dll")]
+        public static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct RECT
+        {
+            public int Left;
+            public int Top;
+            public int Right;
+            public int Bottom;
+        }
+    }
 
     private void OnCollapseClick(object sender, RoutedEventArgs e) => CollapseToTray();
 

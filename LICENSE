@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 大肥鱼桌宠作者
+Copyright (c) 2026 大肥鱼桌宠 (Whale Pet) contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -21,18 +21,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 --------------------------------------------------------------------------
-非软件素材与形象声明(Additional Assets & Character Notice)
+注意 / NOTE
 
-本仓库中的美术素材(Assets/Sprite/*、角色形象、台词梗)为社区二创与 AI 生成内容:
+本 MIT 许可仅覆盖**软件代码**。仓库中的美术素材、角色形象与台词梗
+(Assets/Sprite/* 等)适用单独的许可条款,见 ASSETS-LICENSE.md。
 
-1. 角色形象基于 DeepSeek 蓝鲸 Logo 与社区「鲸鱼娘·大肥鱼」二创形象,
-   由 AI 图像生成工具制作,部分风格参考以下开源社区项目(仅借鉴思路与形象):
-   - 1190fasheqi/dafeiyu-pet (MIT)
-   - YunYueSama/codex-deepseek-pet
-   - gmskywalker/deepseek-fat-fish-codex-pet
-   - roseion/dsh-dayu-fish-skin
-   - chenthreegold/deepseek-whale-pet
-2. 上述形象与台词梗仅供个人学习、娱乐与演示使用,禁止任何形式的商业用途;
-   不得将其用于误导性宣传(如宣称与 DeepSeek 官方有关)。
-3. 「DeepSeek」及相关商标、标识归其合法权利人所有,本项目为社区爱好者作品,
-   与 DeepSeek 官方无任何隶属、认可或合作关系。
+This MIT license covers the **source code** only. Artwork, character design
+and meme lines (Assets/Sprite/*) are licensed separately — see
+ASSETS-LICENSE.md.
